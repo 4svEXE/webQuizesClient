@@ -12,22 +12,20 @@ export class SettingsWidgetComponent {
     rightAnswers: 0
   }
 
-  constructor(){
-
-  }
+  constructor(){}
 
   ngOnInit(): void {};
 
   setTestSize(testSize: number): void {
-    // this.config.testSize = testSize
+    this.config.testSize = testSize
   }
 
   setDifficulty(difficulty: number): void {
-    // this.config.difficulty = difficulty;
+    this.config.difficulty = difficulty;
   }
 
   setRightAnswer(): void {
-    // this.config.rightAnswers++
+    this.config.rightAnswers++
   }
 }
 
