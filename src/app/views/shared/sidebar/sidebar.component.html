@@ -1,0 +1,37 @@
+<nav
+  class="sidebar-container h-[100vh] bg-color-1 dark:bg-color-1"
+  [class.active]="isActive"
+>
+  <div class="h-[100vh] sidebar">
+    <div class="logo">logo</div>
+
+    <ul class="nav">
+      <li data-tooltip="Home">
+        <button routerLink="/home" [routerLinkActive]="['active']" class="">
+          <img src="assets/img/sidebar/home.svg" alt="home" />
+        </button>
+      </li>
+      <li data-tooltip="Start the test">
+        <button routerLink="tests" [routerLinkActive]="['active']">
+          <img src="assets/img/sidebar/test.svg" alt="test" />
+        </button>
+      </li>
+      <li data-tooltip="Test settings">
+        <button (click)="isActive=!isActive" [class.active]="isActive">
+          <img src="assets/img/sidebar/settings.svg" alt="test" />
+        </button>
+      </li>
+    </ul>
+
+    <ul class="settings">
+      <li><button>ENG</button></li>
+      <li>
+        <button (click)="sendThemeState()">
+          {{isDarkTheme? 'light': 'dark'}}
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <app-settings-widget />
+</nav>
