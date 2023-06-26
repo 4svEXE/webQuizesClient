@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SettingsWidgetService } from 'src/app/services/settings-widget.service';
+
 
 @Component({
   selector: 'app-settings-widget',
@@ -12,20 +14,27 @@ export class SettingsWidgetComponent {
     rightAnswers: 0
   }
 
-  constructor(){}
+  constructor(private settingsWidgetService: SettingsWidgetService){}
 
   ngOnInit(): void {};
 
+  sendSettings(settings: any): void {
+    this.settingsWidgetService.sendSettings(settings);
+  }
+
   setTestSize(testSize: number): void {
     this.config.testSize = testSize
+    this.sendSettings(this.config)
   }
 
   setDifficulty(difficulty: number): void {
     this.config.difficulty = difficulty;
+    this.sendSettings(this.config)
   }
 
   setRightAnswer(): void {
     this.config.rightAnswers++
+    this.sendSettings(this.config)
   }
 }
 
