@@ -1,4 +1,7 @@
-<form class="container h-[100vh] flex justify-center items-center" (submit)="createNewTest()">
+<form
+  class="container h-[100vh] flex justify-center items-center"
+  (submit)="createNewTest($event);"
+>
   <div class="contetnt flex rounded-xl text-black dark:text-white">
     <div class="input-block mr-10 bg-color-2-l dark:bg-color-1">
       <h1
@@ -17,6 +20,7 @@
           <textarea
             #title
             (input)="testModel.title = title.value"
+            [value]="testModel.title"
             cols="30"
             rows="4"
             required
@@ -36,6 +40,7 @@
             <input
               #answerRight
               (input)="testModel.answers[0].title = answerRight.value"
+              [value]="testModel.answers[0].title"
               type="text"
               required
             />
@@ -47,6 +52,7 @@
             <input
               #answerNotRight1
               (input)="testModel.answers[1].title = answerNotRight1.value"
+              [value]="testModel.answers[1].title"
               type="text"
               required
             />
@@ -58,6 +64,7 @@
             <input
               #answerNotRight2
               (input)="testModel.answers[2].title = answerNotRight2.value"
+              [value]="testModel.answers[2].title"
               type="text"
               required
             />
@@ -69,6 +76,7 @@
             <input
               #answerNotRight3
               (input)="testModel.answers[3].title = answerNotRight3.value"
+              [value]="testModel.answers[3].title"
               type="text"
               required
             />
@@ -91,6 +99,7 @@
             <input
               #imageUrl
               (input)="testModel.image = imageUrl.value"
+              [value]="testModel.image"
               type="text"
               required
             />
@@ -111,6 +120,7 @@
           <textarea
             #explanation
             (input)="testModel.explanation = explanation.value"
+            [value]="testModel.explanation"
             cols="30"
             rows="4"
             required
@@ -162,8 +172,8 @@
       </div>
 
       <div class="flex">
-        <button>clear</button>
-        <button class="active">save</button>
+        <a (click)="clearInputs(); showToasterInfo('Areas wos cleaned!', 'Message')">clear</a>
+        <button (click)="$event.stopPropagation()" class="active">save</button>
       </div>
     </div>
   </div>
