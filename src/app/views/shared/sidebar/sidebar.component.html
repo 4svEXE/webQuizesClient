@@ -8,17 +8,23 @@
     <ul class="nav">
       <li data-tooltip="Home">
         <button routerLink="/home" [routerLinkActive]="['active']" class="">
-          <img src="assets/img/sidebar/home.svg" alt="home" />
+          <img class="inverted" src="assets/img/sidebar/home.svg" alt="home" />
         </button>
       </li>
       <li data-tooltip="Start the test">
-        <button routerLink="tests" [routerLinkActive]="['active']">
-          <img src="assets/img/sidebar/test.svg" alt="test" />
+        <button routerLink="/tests" [routerLinkActive]="['active']">
+          <img class="inverted" src="assets/img/sidebar/test.svg" alt="test" />
         </button>
       </li>
       <li data-tooltip="Test settings">
         <button (click)="isActive=!isActive" [class.active]="isActive">
-          <img src="assets/img/sidebar/settings.svg" alt="test" />
+          <img class="inverted" src="assets/img/sidebar/settings.svg" alt="test" />
+        </button>
+      </li>
+
+      <li data-tooltip="Add new test">
+        <button  routerLink="/create-test" [routerLinkActive]="['active']">
+          <img class="inverted" src="assets/img/sidebar/plus.svg" alt="test" />
         </button>
       </li>
     </ul>

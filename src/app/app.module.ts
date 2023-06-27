@@ -8,6 +8,7 @@ import { HomeComponent } from './views/pages/home/home.component';
 import { TestsComponent } from './views/pages/tests/tests.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SettingsWidgetComponent } from './views/shared/sidebar/settings-widget/settings-widget.component';
+import { CreateTestComponent } from './views/pages/create-test/create-test.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SettingsWidgetComponent } from './views/shared/sidebar/settings-widget/
     HomeComponent,
     TestsComponent,
     SettingsWidgetComponent,
+    CreateTestComponent,
   ],
   imports: [
     BrowserModule,

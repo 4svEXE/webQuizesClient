@@ -7,9 +7,9 @@
 
 :root {
   --bg-color-1-l: #06ffff;
-  --bg-color-2-l: #F6FFDE;
+  --bg-color-2-l: #f6ffde;
   --bg-color-2_op: #d2e9e990;
-  --bg-color-3-l: #E3F2C1;
+  --bg-color-3-l: #e3f2c1;
   --bg-color-4-l: #ab09f0;
 
   --bg-color-1: #164b60;
@@ -19,10 +19,9 @@
   --bg-color-4: #013b4f;
 }
 
-body{
+body {
   background-color: inherit;
 }
-
 
 ul,
 li {
@@ -60,6 +59,16 @@ button {
   }
 }
 
-.shadow{
+.shadow {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fill-white {
+  svg {
+    fill: #fff;
+  }
+}
+
+.inverted {
+  filter: invert(1);
 }

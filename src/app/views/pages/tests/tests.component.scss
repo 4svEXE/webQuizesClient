@@ -23,8 +23,6 @@
       border-bottom: 1px dashed;
       border-radius: 50%;
       position: absolute;
-      //   left: 50%;top: 50%;
-      //   transform: translateX(100%) translateY(100%);
       animation: spin 1s linear infinite;
     }
 
@@ -35,6 +33,10 @@
       100% {
         transform: rotate(360deg);
       }
+    }
+
+    img {
+      z-index: 5;
     }
   }
 }
@@ -52,8 +54,6 @@
   &.active {
     opacity: 1;
     border: 3px solid yellow !important;
-
-    
   }
 
   &.true {
