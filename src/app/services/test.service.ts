@@ -8,7 +8,7 @@ import { BehaviorSubject, Subject } from "rxjs";
 })
 
 export class TestService {
-  private dataSubject = new Subject<TestModel[]>();
+  private dataSubject = new Subject<TestModel[] | object[]>();
   data$ = this.dataSubject.asObservable();
 
   sendData(data: TestModel[]) {
@@ -20,12 +20,19 @@ export class TestService {
   // Create the observer
   testSubject = new BehaviorSubject(this.getTestQuestions());
 
-  // приймаємо дані з сервака й відправ на хуй
   getTestQuestions() {
     return this.webReqService.get("tests");
   }
 
-  createTestQuestion(testModel: TestModel) {
+  createTestQuestion(testModel: TestModel | object) {
     return this.webReqService.post("tests", testModel);
+  }
+
+  deleteTestQuestion(id: string) {
+    return this.webReqService.delete("tests/"+ id);
+  }
+
+  getTestQuestion(id: string) {
+    return this.webReqService.get("tests/test/"+id);
   }
 }

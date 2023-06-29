@@ -24,6 +24,8 @@ export class WebRequestService {
   }
 
   delete(url: string) {
-    return this.http.delete(`${this.Root_URL}/${url}`);
+    return this.http.delete(`${this.Root_URL}/${url}`)
   }
+
+  
 }

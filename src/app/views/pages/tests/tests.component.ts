@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { fakeTest } from "src/app/db/fakeTest";
 import { TestModel } from "src/app/models/Test";
 import { SettingsWidgetService } from "src/app/services/settings-widget.service";
 import { TestService } from "src/app/services/test.service";
@@ -19,14 +20,14 @@ export class TestsComponent {
   config: ConfigType = {
     testSize: 20, // 10,15,20
     difficulty: 1, // 1,2,3
-    rightAnswers: 0 // 0-20
-  }
+    rightAnswers: 0, // 0-20
+  };
 
   constructor(
     private testService: TestService,
     private settingsWidgetService: SettingsWidgetService
   ) {
-    this.settingsWidgetService.data$.subscribe(data => {
+    this.settingsWidgetService.data$.subscribe((data) => {
       this.config = data;
     });
   }
@@ -35,10 +36,6 @@ export class TestsComponent {
     this.getTests();
   }
 
-
-  
-
-  
   question: questionType = { isActive: false, isCorrect: false };
   questions: questionType[] = [this.question];
 
@@ -71,40 +68,9 @@ export class TestsComponent {
 }
 
 type ConfigType = {
-  testSize: number, // 10,15,20
-  difficulty: number // 1,2,3
-  rightAnswers: number // 0-20
-}
+  testSize: number; // 10,15,20
+  difficulty: number; // 1,2,3
+  rightAnswers: number; // 0-20
+};
 
-const tasks = [
-  {
-    _id: "649950bb98a76ea32abc3be1",
-    image: "",
-    title: "Loading...",
-    difficulty: 1,
-    answers: [
-      {
-        title: "Loading...",
-        isCorrect: false,
-        _id: "649954e3caea8ebd04e3820e",
-      },
-      {
-        title: "Loading...",
-        isCorrect: false,
-        _id: "649954e3caea8ebd04e3820f",
-      },
-      {
-        title: "Loading...",
-        isCorrect: false,
-        _id: "649954e3caea8ebd04e38210",
-      },
-      {
-        title: "Loading...",
-        isCorrect: true,
-        _id: "649954e3caea8ebd04e38211",
-      },
-    ],
-    explanation: "explanation",
-    __v: 0,
-  },
-];
+const tasks = [fakeTest];

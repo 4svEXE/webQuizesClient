@@ -11,6 +11,8 @@ import { TestsComponent } from './views/pages/tests/tests.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SettingsWidgetComponent } from './views/shared/sidebar/settings-widget/settings-widget.component';
 import { CreateTestComponent } from './views/pages/create-test/create-test.component';
+import { AllTestsComponent } from './views/pages/all-tests/all-tests.component';
+import { EditTestComponent } from './views/pages/edit-test/edit-test.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CreateTestComponent } from './views/pages/create-test/create-test.compo
     TestsComponent,
     SettingsWidgetComponent,
     CreateTestComponent,
+    AllTestsComponent,
+    EditTestComponent,
   ],
   imports: [
     BrowserModule,
